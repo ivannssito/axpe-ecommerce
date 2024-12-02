@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1733081383954-1" author="Ivansito">
+        <loadData tableName="TAB_PRICES" file="db/changelog/0.0.1/data/csv/DATA-TAB_PRICES_INIT.csv">
+            <column name="ID" type="computed"/>
+            <column name="BRAND_ID" type="int"/>
+            <column name="START_DATE" type="timestamp"/>
+            <column name="END_DATE" type="timestamp"/>
+            <column name="PRICE_LIST" type="int"/>
+            <column name="PRODUCT_ID" type="int"/>
+            <column name="PRIORITY" type="int"/>
+            <column name="PRICE" type="double"/>
+            <column name="CURR" type="varchar2"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

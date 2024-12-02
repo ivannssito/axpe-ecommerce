@@ -1,0 +1,114 @@
+openapi: 3.0.3
+info:
+  title: Ecommerce
+  description: Ecommerce
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080/ecommerce'
+tags:
+  - name: Prices
+    description: Prices
+paths:
+  /prices:
+    get:
+      tags:
+        - Prices
+      summary: Filter prices
+      description: Filter prices
+      operationId: filterPrices
+      parameters:
+        - $ref: '#/components/parameters/PricesFilterRequestParam'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Price'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          description: Not found
+        '500':
+          $ref: '#/components/responses/500'
+components:
+  schemas:
+    Price:
+      type: object
+      description: Price data
+      properties:
+        productId:
+          type: integer
+          description: Product id
+          example: 1
+        brandId:
+          type: integer
+          description: Brand id
+          example: ZARA
+        priceList:
+          type: integer
+          description: Price list
+          example: 1
+        startDate:
+          type: string
+          format: date-time
+          example: 2020-12-31T22:59:59
+          description: Activation start date
+        endDate:
+          type: string
+          format: date-time
+          example: 2020-12-31T22:59:59
+          description: Activation end date
+        price:
+          type: number
+          format: float
+          description: Price
+          example: 45.47
+    Error:
+      type: object
+      description: Schema containing error information
+      properties:
+        status:
+          type: string
+          description: Status code
+          example: 404
+        description:
+          type: string
+          description: Error description
+          example: Element not found
+  parameters:
+    PricesFilterRequestParam:
+      name: filter
+      in: query
+      description: Prices filter
+      required: true
+      schema:
+        type: object
+        description: Filter for prices
+        properties:
+          activationDate:
+            type: string
+            format: date-time
+            description: Activation date
+            example: 2020-12-31T22:59:59
+          productId:
+            type: integer
+            description: Product id
+            example: 1
+          brandId:
+            type: integer
+            description: Brand id
+            example: 1
+  responses:
+    '400':
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    '500':
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'

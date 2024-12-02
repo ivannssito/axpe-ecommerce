@@ -1,0 +1,23 @@
+logging:
+  level:
+    root: info
+    com.ivan.ecommerce: trace
+    org.hibernate.sql: debug
+    org.hibernate.sql.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.orm.jdbc.bind: trace
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:data
+    driverClassName: org.h2.Driver
+    username: ${APP_DB_USERNAME:sa}
+    password: ${APP_DB_PASSWORD:}
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-test.xml
+    # Ensure that db is up-to-date with the latest changes
+    enabled: true

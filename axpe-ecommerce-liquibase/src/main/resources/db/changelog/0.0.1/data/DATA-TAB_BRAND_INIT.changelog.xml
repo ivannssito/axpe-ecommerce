@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1733081354598-1" author="Ivansito">
+        <loadData tableName="TAB_BRAND" file="db/changelog/0.0.1/data/csv/DATA-TAB_BRAND_INIT.csv">
+            <column name="id" type="computed"/>
+            <column name="name" type="varchar2"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,17 @@
+logging:
+  level:
+    root: info
+    com.ivan.ecommerce: trace
+    org.hibernate.sql: debug
+    org.hibernate.sql.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.orm.jdbc.bind: trace
+
+spring:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

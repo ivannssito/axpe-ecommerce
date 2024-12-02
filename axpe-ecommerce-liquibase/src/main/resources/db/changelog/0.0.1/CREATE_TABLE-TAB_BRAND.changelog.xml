@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1733080914117-1" author="Ivansito">
+        <createTable tableName="TAB_BRAND">
+            <column name="ID" type="int" defaultValueConstraintName="SEQ_BRAND">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NAME" type="varchar2"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

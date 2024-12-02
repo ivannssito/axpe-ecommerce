@@ -18,7 +18,7 @@ El context path es `ecommerce`,
 Una ejecución de ejemplo,
 
 ```http request
-GET http://localhost:8080/ecommerce/prices?activationDate=2020-06-14T10%3A00%3A00&productId=35455&brandName=Zara
+GET http://localhost:8080/ecommerce/prices?activationDate=2020-06-14T10%3A00%3A00&productId=35455&brandId=1
 ```
 
 ## Base de datos
